@@ -265,6 +265,7 @@ export default function App() {
       await MediaLibrary.saveToLibraryAsync(uri);
       setProgress("Saved");
       await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      Alert.alert("Saved", "Your meme was saved to your photos.");
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Save failed.");
     }
